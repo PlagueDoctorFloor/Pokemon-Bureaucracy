@@ -1,67 +1,37 @@
 {
   :code {
+    :breakpoints [
+    ]
     :find {
       :term "arcto"
     }
   }
   :workflow {
+    :open-tabs [
+      [
+        [
+          "/Test Collections/JSONTest.collection"
+          :scene
+        ]
+        [
+          "/Scripts/JSONTesting.script"
+          :code
+        ]
+        [
+          "/JsonData/pokemon.json"
+          :code
+        ]
+        [
+          "/GUIs/Weight Game.gui"
+          :scene
+        ]
+        [
+          "/game.project"
+          :cljfx-form-view
+        ]
+      ]
+    ]
     :recent-files [
-      [
-        "/Fonts/PokemonBodyHeavy.font"
-        :scene
-      ]
-      [
-        "/input/game.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites2.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites3.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites4.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites5.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites6.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites7.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites8.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites9.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites10.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites11.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites12.go"
-        :scene
-      ]
       [
         "/Objects/PokemonSprites/Sprites13.go"
         :scene
@@ -115,15 +85,11 @@
         :scene
       ]
       [
-        "/Test Collections/DraggingTest.collection"
-        :scene
-      ]
-      [
         "/Scripts/DragSpawningScript.script"
         :code
       ]
       [
-        "/Scripts/JSONTesting.script"
+        "/Scripts/PassportFill.script"
         :code
       ]
       [
@@ -131,8 +97,68 @@
         :code
       ]
       [
-        "/Scripts/PassportFill.script"
+        "/Art/atlases/PokemonSprites21.atlas"
+        :scene
+      ]
+      [
+        "/Test Collections/DraggingTest.collection"
+        :scene
+      ]
+      [
+        "/Scripts/JSONTesting.script"
         :code
+      ]
+      [
+        "/Test Collections/JSONTest.collection"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBody.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyLight.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyHeavy.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyExtralight.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyExtrabold.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyBold.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonBodyMedium.font"
+        :scene
+      ]
+      [
+        "/JsonData/pokemon.json"
+        :code
+      ]
+      [
+        "/Fonts/PokemonBodySemiBold.font"
+        :scene
+      ]
+      [
+        "/Fonts/PokemonHeaders.font"
+        :scene
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Weight Game.gui"
+        :scene
       ]
     ]
   }

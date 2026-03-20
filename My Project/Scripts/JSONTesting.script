@@ -8,6 +8,8 @@
 local jsonTable
 -- Create a dictionary to keep track of the spawned sprites 
 local spawnedSprites = {}
+local monWeight1 = 0;
+local monWeight2 = 0;
 
 -- Custom Function to select a random pokemon and display it's name and photo
 local function newMons()
@@ -17,7 +19,8 @@ local function newMons()
 	print(chosenPokemon)
 	-- Sets the first label to the name of the pokemon 
 	label.set_text("#pokemon1Name", jsonTable[tostring(chosenPokemon)]["name"])
-
+	-- Sets weight of pokemon 1
+	monWeight1 = jsonTable[tostring(chosenPokemon)]["weight"]
 	-- Conncatinates a string to match the name of (most) of the pictures
 	local img = tostring(chosenPokemon) .. "-1"
 	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
@@ -79,6 +82,8 @@ local function newMons()
 	print(chosenPokemon2)
 	-- Sets the second label to the name of the pokemon 
 	label.set_text("#pokemon2Name", jsonTable[tostring(chosenPokemon2)]["name"])
+	-- Sets weight of pokemon 2
+	monWeight2 = jsonTable[tostring(chosenPokemon2)]["weight"]
 	-- Conncatinates a string to match the name of (most) of the pictures
 	img = tostring(chosenPokemon2) .. "-1"
 	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
