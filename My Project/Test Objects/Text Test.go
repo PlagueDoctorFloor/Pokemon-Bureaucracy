@@ -2,37 +2,9 @@ components {
   id: "JSONTesting"
   component: "/Scripts/JSONTesting.script"
 }
-embedded_components {
-  id: "pokemon1Name"
-  type: "label"
-  data: "size {\n"
-  "  x: 128.0\n"
-  "  y: 32.0\n"
-  "}\n"
-  "text: \"Label\"\n"
-  "font: \"/builtins/fonts/default.font\"\n"
-  "material: \"/builtins/fonts/label-df.material\"\n"
-  ""
-  position {
-    x: -250.0
-    y: 400.0
-  }
-}
-embedded_components {
-  id: "pokemon2Name"
-  type: "label"
-  data: "size {\n"
-  "  x: 128.0\n"
-  "  y: 32.0\n"
-  "}\n"
-  "text: \"Label\"\n"
-  "font: \"/builtins/fonts/default.font\"\n"
-  "material: \"/builtins/fonts/label-df.material\"\n"
-  ""
-  position {
-    x: 250.0
-    y: 400.0
-  }
+components {
+  id: "Weight Game"
+  component: "/GUIs/Weight Game.gui"
 }
 embedded_components {
   id: "PokemonSprite1"

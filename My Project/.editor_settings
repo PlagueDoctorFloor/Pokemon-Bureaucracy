@@ -18,10 +18,6 @@
           :code
         ]
         [
-          "/JsonData/pokemon.json"
-          :code
-        ]
-        [
           "/GUIs/Weight Game.gui"
           :scene
         ]
@@ -29,21 +25,13 @@
           "/game.project"
           :cljfx-form-view
         ]
+        [
+          "/Scripts/WeightGameGUI.gui_script"
+          :code
+        ]
       ]
     ]
     :recent-files [
-      [
-        "/Objects/PokemonSprites/Sprites13.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites14.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites15.go"
-        :scene
-      ]
       [
         "/Objects/PokemonSprites/Sprites16.go"
         :scene
@@ -105,14 +93,6 @@
         :scene
       ]
       [
-        "/Scripts/JSONTesting.script"
-        :code
-      ]
-      [
-        "/Test Collections/JSONTest.collection"
-        :scene
-      ]
-      [
         "/Fonts/PokemonBody.font"
         :scene
       ]
@@ -141,10 +121,6 @@
         :scene
       ]
       [
-        "/JsonData/pokemon.json"
-        :code
-      ]
-      [
         "/Fonts/PokemonBodySemiBold.font"
         :scene
       ]
@@ -153,12 +129,36 @@
         :scene
       ]
       [
+        "/Weight Game.gui"
+        :scene
+      ]
+      [
         "/game.project"
         :cljfx-form-view
       ]
       [
-        "/Weight Game.gui"
+        "/Test Objects/Text Test.go"
         :scene
+      ]
+      [
+        "/JsonData/pokemon.json"
+        :code
+      ]
+      [
+        "/Test Collections/JSONTest.collection"
+        :scene
+      ]
+      [
+        "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
+        "/GUIs/Weight Game.gui"
+        :scene
+      ]
+      [
+        "/Scripts/WeightGameGUI.gui_script"
+        :code
       ]
     ]
   }

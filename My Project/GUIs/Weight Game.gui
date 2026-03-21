@@ -1,3 +1,4 @@
+script: "/Scripts/WeightGameGUI.gui_script"
 fonts {
   name: "PokemonBodyBold"
   font: "/Fonts/PokemonBodyBold.font"
