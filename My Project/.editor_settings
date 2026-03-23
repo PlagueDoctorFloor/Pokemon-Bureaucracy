@@ -3,7 +3,7 @@
     :breakpoints [
     ]
     :find {
-      :term "arcto"
+      :term "800"
     }
   }
   :workflow {
@@ -18,11 +18,19 @@
           :code
         ]
         [
+          "/Scripts/WeightGameGUI.gui_script"
+          :code
+        ]
+        [
           "/GUIs/Weight Game.gui"
           :scene
         ]
         [
-          "/Scripts/WeightGameGUI.gui_script"
+          "/Scripts/Title Screen.script"
+          :code
+        ]
+        [
+          "/JsonData/pokemon.json"
           :code
         ]
       ]
@@ -89,10 +97,6 @@
         :scene
       ]
       [
-        "/JsonData/pokemon.json"
-        :code
-      ]
-      [
         "/Test Collections/JSONTest.collection"
         :scene
       ]
@@ -103,18 +107,6 @@
       [
         "/Test Collections/Title.collection"
         :scene
-      ]
-      [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
-        "/Scripts/cursor.script"
-        :code
-      ]
-      [
-        "/Scripts/Title Screen.script"
-        :code
       ]
       [
         "/builtins/input/all.input_binding"
@@ -141,7 +133,23 @@
         :scene
       ]
       [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Scripts/cursor.script"
+        :code
+      ]
+      [
+        "/Test Collections/WeightGame.collection"
+        :scene
+      ]
+      [
         "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
+        "/JsonData/pokemon.json"
         :code
       ]
       [
@@ -149,8 +157,8 @@
         :scene
       ]
       [
-        "/Test Collections/WeightGame.collection"
-        :scene
+        "/Scripts/Title Screen.script"
+        :code
       ]
       [
         "/Scripts/WeightGameGUI.gui_script"

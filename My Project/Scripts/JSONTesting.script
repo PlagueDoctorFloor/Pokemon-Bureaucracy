@@ -132,7 +132,7 @@ local function newMons()
 	msg.post(id,"play_animation", {id = hash(img)})
 
 
-	msg.post("#Weight Game","UpdatePokemon",{message = "Bleep Bleep Bloop"})
+	msg.post("#Weight Game","UpdatePokemon",{name1 = jsonTable[tostring(chosenPokemon)]["name"], weight1 = jsonTable[tostring(chosenPokemon)]["weight"], name2 = jsonTable[tostring(chosenPokemon2)]["name"], weight2 = jsonTable[tostring(chosenPokemon2)]["weight"]})
 end
 
 -- When the collection loads
@@ -146,6 +146,14 @@ function init(self)
 
 	-- Call newMons() to display a pair of pokemon
 	newMons()
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("newMons") then
+		go.delete(spawnedSprites)
+		spawnedSprites = {}
+		newMons()
+	end
 end
 
 -- When input is recieved
@@ -171,12 +179,6 @@ function fixed_update(self, dt)
 	-- Physics section of game.project
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
 	-- Remove this function if not needed
 end
 
