@@ -10,15 +10,7 @@
     :open-tabs [
       [
         [
-          "/Test Collections/JSONTest.collection"
-          :scene
-        ]
-        [
-          "/Scripts/JSONTesting.script"
-          :code
-        ]
-        [
-          "/GUIs/Weight Game.gui"
+          "/Test Collections/Title.collection"
           :scene
         ]
         [
@@ -26,20 +18,12 @@
           :cljfx-form-view
         ]
         [
-          "/Scripts/WeightGameGUI.gui_script"
+          "/Scripts/Title Screen.script"
           :code
         ]
       ]
     ]
     :recent-files [
-      [
-        "/Objects/PokemonSprites/Sprites16.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites17.go"
-        :scene
-      ]
       [
         "/Objects/PokemonSprites/Sprites18.go"
         :scene
@@ -133,20 +117,12 @@
         :scene
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Test Objects/Text Test.go"
         :scene
       ]
       [
         "/JsonData/pokemon.json"
         :code
-      ]
-      [
-        "/Test Collections/JSONTest.collection"
-        :scene
       ]
       [
         "/Scripts/JSONTesting.script"
@@ -158,6 +134,22 @@
       ]
       [
         "/Scripts/WeightGameGUI.gui_script"
+        :code
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Test Collections/JSONTest.collection"
+        :scene
+      ]
+      [
+        "/Test Collections/Title.collection"
+        :scene
+      ]
+      [
+        "/Scripts/Title Screen.script"
         :code
       ]
     ]

@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /Test Collections/JSONTest.collectionc
+main_collection = /Test Collections/Title.collectionc
 
 [script]
 shared_state = 1
