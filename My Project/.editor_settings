@@ -10,48 +10,24 @@
     :open-tabs [
       [
         [
-          "/game.project"
-          :cljfx-form-view
-        ]
-        [
-          "/Scripts/cursor.script"
-          :code
-        ]
-        [
-          "/Scripts/Title Screen.script"
-          :code
-        ]
-        [
-          "/Test Collections/Loader.collection"
+          "/Test Collections/WeightGame.collection"
           :scene
         ]
         [
-          "/Scripts/Loader.script"
+          "/Scripts/JSONTesting.script"
           :code
         ]
         [
-          "/Test Objects/Loader.go"
+          "/GUIs/Weight Game.gui"
           :scene
         ]
         [
-          "/Scripts/DataTracker.script"
+          "/Scripts/WeightGameGUI.gui_script"
           :code
-        ]
-        [
-          "/Test Collections/DraggingTest.collection"
-          :scene
-        ]
-        [
-          "/builtins/input/all.input_binding"
-          :cljfx-form-view
         ]
       ]
     ]
     :recent-files [
-      [
-        "/Objects/PokemonSprites/Sprites1.go"
-        :scene
-      ]
       [
         "/Test Objects/TestPokemonPassport.go"
         :scene
@@ -117,23 +93,27 @@
         :code
       ]
       [
-        "/Scripts/JSONTesting.script"
-        :code
-      ]
-      [
-        "/GUIs/Weight Game.gui"
-        :scene
-      ]
-      [
-        "/Scripts/WeightGameGUI.gui_script"
-        :code
-      ]
-      [
         "/Test Collections/JSONTest.collection"
         :scene
       ]
       [
         "/Scripts/DragSpawningScript.script"
+        :code
+      ]
+      [
+        "/Test Collections/Title.collection"
+        :scene
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Scripts/cursor.script"
+        :code
+      ]
+      [
+        "/Scripts/Title Screen.script"
         :code
       ]
       [
@@ -153,11 +133,7 @@
         :scene
       ]
       [
-        "/Scripts/cursor.script"
-        :code
-      ]
-      [
-        "/Scripts/Title Screen.script"
+        "/Scripts/Loader.script"
         :code
       ]
       [
@@ -165,16 +141,20 @@
         :scene
       ]
       [
-        "/Scripts/Loader.script"
+        "/Scripts/JSONTesting.script"
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
+        "/GUIs/Weight Game.gui"
+        :scene
       ]
       [
-        "/Test Collections/Title.collection"
+        "/Test Collections/WeightGame.collection"
         :scene
+      ]
+      [
+        "/Scripts/WeightGameGUI.gui_script"
+        :code
       ]
     ]
   }

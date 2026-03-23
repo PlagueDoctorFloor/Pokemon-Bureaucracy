@@ -130,12 +130,13 @@ local function newMons()
 	table.insert(spawnedSprites, id)
 	-- Sends a message to the spawned instance to display the correct image 
 	msg.post(id,"play_animation", {id = hash(img)})
+
+
+	msg.post("#Weight Game","UpdatePokemon",{message = "Bleep Bleep Bloop"})
 end
 
 -- When the collection loads
 function init(self)
-	-- Get inputs
-	msg.post(".", "acquire_input_focus")
 	-- Seed random
 	math.randomseed(os.clock() * 100000000000)
 	-- Load the JSON file
@@ -149,16 +150,7 @@ end
 
 -- When input is recieved
 function on_input(self, action_id, action)
-	-- When left click happens
-	if action_id == hash("touch") then
-		-- While pressed
-		if action.pressed then
-			-- Delete old sprites spawned
-			go.delete(spawnedSprites)
-			-- Call newMons to display 2 new pokemon
-			newMons()
-		end
-	end
+	-- Old Material Removed
 end
 
 function final(self)
