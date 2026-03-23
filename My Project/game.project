@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /Test Collections/Title.collectionc
+main_collection = /Test Collections/Loader.collectionc
 
 [script]
 shared_state = 1
@@ -18,4 +18,7 @@ dependencies#0 = https://github.com/subsoap/defos/archive/refs/tags/v2.8.0.zip
 
 [library]
 include_dirs = 
+
+[input]
+game_binding = /builtins/input/all.input_bindingc
 

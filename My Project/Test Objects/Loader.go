@@ -1,0 +1,16 @@
+components {
+  id: "Loader"
+  component: "/Scripts/Loader.script"
+}
+embedded_components {
+  id: "TitleScreen"
+  type: "collectionproxy"
+  data: "collection: \"/Test Collections/Title.collection\"\n"
+  ""
+}
+embedded_components {
+  id: "WeightGame"
+  type: "collectionproxy"
+  data: "collection: \"/Test Collections/WeightGame.collection\"\n"
+  ""
+}

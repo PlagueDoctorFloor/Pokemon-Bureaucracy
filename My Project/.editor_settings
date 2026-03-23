@@ -10,55 +10,51 @@
     :open-tabs [
       [
         [
-          "/Test Collections/Title.collection"
-          :scene
-        ]
-        [
           "/game.project"
           :cljfx-form-view
+        ]
+        [
+          "/Scripts/cursor.script"
+          :code
         ]
         [
           "/Scripts/Title Screen.script"
           :code
         ]
+        [
+          "/Test Collections/Loader.collection"
+          :scene
+        ]
+        [
+          "/Scripts/Loader.script"
+          :code
+        ]
+        [
+          "/Test Objects/Loader.go"
+          :scene
+        ]
+        [
+          "/Scripts/DataTracker.script"
+          :code
+        ]
+        [
+          "/Test Collections/DraggingTest.collection"
+          :scene
+        ]
+        [
+          "/builtins/input/all.input_binding"
+          :cljfx-form-view
+        ]
       ]
     ]
     :recent-files [
-      [
-        "/Objects/PokemonSprites/Sprites18.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites19.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites20.go"
-        :scene
-      ]
-      [
-        "/Objects/PokemonSprites/Sprites21.go"
-        :scene
-      ]
-      [
-        "/Scripts/Sprites.script"
-        :code
-      ]
       [
         "/Objects/PokemonSprites/Sprites1.go"
         :scene
       ]
       [
-        "/Scripts/cursor.script"
-        :code
-      ]
-      [
         "/Test Objects/TestPokemonPassport.go"
         :scene
-      ]
-      [
-        "/Scripts/DragSpawningScript.script"
-        :code
       ]
       [
         "/Scripts/PassportFill.script"
@@ -70,10 +66,6 @@
       ]
       [
         "/Art/atlases/PokemonSprites21.atlas"
-        :scene
-      ]
-      [
-        "/Test Collections/DraggingTest.collection"
         :scene
       ]
       [
@@ -137,20 +129,52 @@
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Test Collections/JSONTest.collection"
         :scene
       ]
       [
-        "/Test Collections/Title.collection"
+        "/Scripts/DragSpawningScript.script"
+        :code
+      ]
+      [
+        "/builtins/input/all.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/Test Collections/DraggingTest.collection"
         :scene
+      ]
+      [
+        "/Scripts/Data Tracker.script"
+        :code
+      ]
+      [
+        "/Test Objects/Loader.go"
+        :scene
+      ]
+      [
+        "/Scripts/cursor.script"
+        :code
       ]
       [
         "/Scripts/Title Screen.script"
         :code
+      ]
+      [
+        "/Test Collections/Loader.collection"
+        :scene
+      ]
+      [
+        "/Scripts/Loader.script"
+        :code
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Test Collections/Title.collection"
+        :scene
       ]
     ]
   }

@@ -2,7 +2,11 @@ name: "Title"
 scale_along_z: 0
 embedded_instances {
   id: "go"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"Title Screen\"\n"
+  "  component: \"/Scripts/Title Screen.script\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"Title\"\n"
   "  type: \"label\"\n"
   "  data: \"size {\\n"
