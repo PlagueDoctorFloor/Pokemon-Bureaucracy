@@ -10,12 +10,8 @@
     :open-tabs [
       [
         [
-          "/Scripts/Title Screen.script"
+          "/Scripts/Loader.script"
           :code
-        ]
-        [
-          "/game.project"
-          :cljfx-form-view
         ]
       ]
     ]
@@ -101,10 +97,6 @@
         :scene
       ]
       [
-        "/Scripts/Loader.script"
-        :code
-      ]
-      [
         "/Test Collections/Loader.collection"
         :scene
       ]
@@ -137,15 +129,19 @@
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Scripts/WeightGameGUI.gui_script"
         :code
       ]
       [
         "/Scripts/Title Screen.script"
+        :code
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Scripts/Loader.script"
         :code
       ]
     ]
