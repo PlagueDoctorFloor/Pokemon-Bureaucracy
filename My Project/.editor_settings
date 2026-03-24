@@ -33,13 +33,17 @@
           "/JsonData/pokemon.json"
           :code
         ]
+        [
+          "/game.project"
+          :cljfx-form-view
+        ]
+        [
+          "/input/game.input_binding"
+          :cljfx-form-view
+        ]
       ]
     ]
     :recent-files [
-      [
-        "/Test Objects/TestPokemonPassport.go"
-        :scene
-      ]
       [
         "/Scripts/PassportFill.script"
         :code
@@ -109,10 +113,6 @@
         :scene
       ]
       [
-        "/builtins/input/all.input_binding"
-        :cljfx-form-view
-      ]
-      [
         "/Test Collections/DraggingTest.collection"
         :scene
       ]
@@ -133,10 +133,6 @@
         :scene
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Scripts/cursor.script"
         :code
       ]
@@ -149,10 +145,6 @@
         :code
       ]
       [
-        "/JsonData/pokemon.json"
-        :code
-      ]
-      [
         "/GUIs/Weight Game.gui"
         :scene
       ]
@@ -161,8 +153,24 @@
         :code
       ]
       [
+        "/JsonData/pokemon.json"
+        :code
+      ]
+      [
         "/Scripts/WeightGameGUI.gui_script"
         :code
+      ]
+      [
+        "/builtins/input/all.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
       ]
     ]
   }
