@@ -10,8 +10,12 @@
     :open-tabs [
       [
         [
-          "/Scripts/WeightGameGUI.gui_script"
+          "/Scripts/Title Screen.script"
           :code
+        ]
+        [
+          "/game.project"
+          :cljfx-form-view
         ]
       ]
     ]
@@ -113,19 +117,11 @@
         :cljfx-form-view
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/input/game.input_binding"
         :cljfx-form-view
       ]
       [
         "/JsonData/pokemon.json"
-        :code
-      ]
-      [
-        "/Scripts/Title Screen.script"
         :code
       ]
       [
@@ -141,7 +137,15 @@
         :code
       ]
       [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
         "/Scripts/WeightGameGUI.gui_script"
+        :code
+      ]
+      [
+        "/Scripts/Title Screen.script"
         :code
       ]
     ]
