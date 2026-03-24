@@ -1,24 +1,23 @@
 ------------------------------------------------------------------------------------------ 
--- ***Testing Script***
--- This script was written to figure out how to access the JSON file and information stored 
--- inside, as well as display them dynamically and interact with the pictures 
--- It is only tied to the JSONTest collection
+-- This script accesses the pokemon JSON file and spawns objects to display their sprite
+-- it passes information from the JSON file to the WeightGameGUI so it can display
+-- that information. 
+-- TIED TO: WeightGame Collection, WeightGameGUI Script
 ------------------------------------------------------------------------------------------
+
 -- Create a variable to hold the JSONtable
 local jsonTable
 -- Create a dictionary to keep track of the spawned sprites 
 local spawnedSprites = {}
-local monWeight1 = 0;
-local monWeight2 = 0;
 
--- Custom Function to select a random pokemon and display it's name and photo
+-- Custom Function to select a random pokemon and display it's photo
 local function newMons()
 	-- Selects a random number between 1 and 1025
 	local chosenPokemon = math.random(1025)
+
 	-- Prints the number for debugging purposes
-	print(chosenPokemon)
-	-- Sets weight of pokemon 1
-	monWeight1 = jsonTable[tostring(chosenPokemon)]["weight"]
+	-- print(chosenPokemon)
+
 	-- Conncatinates a string to match the name of (most) of the pictures
 	local img = tostring(chosenPokemon) .. "-1"
 	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
@@ -65,7 +64,7 @@ local function newMons()
 	elseif chosenPokemon > 1000 and chosenPokemon <=1050 then
 		id = factory.create("#PokemonSprite21",vmath.vector3(250,300,0))
 	end
-	-- Inserts the ID in the table
+	-- Inserts the ID in the spawnedSprites table
 	table.insert(spawnedSprites, id)
 	-- Sends a message to the spawned instance to display the correct image 
 	msg.post(id,"play_animation", {id = hash(img)})
@@ -73,13 +72,13 @@ local function newMons()
 	-- Selects a random number between 1 and 1025
 	local chosenPokemon2 = math.random(1025)
 	-- Rerolls if the same number is chosen as the first pokemon
-	while chosenPokemon == chosenPokemon2 do
+	while jsonTable[tostring(chosenPokemon)]["weight"] == jsonTable[tostring(chosenPokemon2)]["weight"] do
 		chosenPokemon2 = math.random(1025)
 	end
+	
 	-- Prints for debugging purposes 
-	print(chosenPokemon2)
-	-- Sets weight of pokemon 2
-	monWeight2 = jsonTable[tostring(chosenPokemon2)]["weight"]
+	-- print(chosenPokemon2)
+	
 	-- Conncatinates a string to match the name of (most) of the pictures
 	img = tostring(chosenPokemon2) .. "-1"
 	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
@@ -126,18 +125,18 @@ local function newMons()
 	elseif chosenPokemon2 > 1000 and chosenPokemon2 <=1050 then
 		id = factory.create("#PokemonSprite21",vmath.vector3(750,300,0))
 	end
-	-- Inserts the ID in the table
+	-- Inserts the ID in the spawned sprites table
 	table.insert(spawnedSprites, id)
 	-- Sends a message to the spawned instance to display the correct image 
 	msg.post(id,"play_animation", {id = hash(img)})
 
-
+	-- Sends message to WeightGameGUI with message_id "UpdatePokemon" and a table containing the pokemon's names and weights
 	msg.post("#Weight Game","UpdatePokemon",{name1 = jsonTable[tostring(chosenPokemon)]["name"], weight1 = jsonTable[tostring(chosenPokemon)]["weight"], name2 = jsonTable[tostring(chosenPokemon2)]["name"], weight2 = jsonTable[tostring(chosenPokemon2)]["weight"]})
 end
 
--- When the collection loads
+-- When the collection loads for the first time
 function init(self)
-	-- Seed random
+	-- Randomize Seed
 	math.randomseed(os.clock() * 100000000000)
 	-- Load the JSON file
 	local test_json_file = sys.load_resource("/res/json/pokemon.json")
@@ -148,10 +147,15 @@ function init(self)
 	newMons()
 end
 
+-- On receiving a message
 function on_message(self, message_id, message, sender)
+	-- When getting a "newMons" message from WeightGameGUI
 	if message_id == hash("newMons") then
+		-- delete the current sprites
 		go.delete(spawnedSprites)
+		-- Clear spawnedSprites dictionary
 		spawnedSprites = {}
+		-- Call newMons to display 2 more
 		newMons()
 	end
 end

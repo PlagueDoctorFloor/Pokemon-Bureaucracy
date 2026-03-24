@@ -10,7 +10,7 @@
     :open-tabs [
       [
         [
-          "/Scripts/Loader.script"
+          "/Scripts/JSONTesting.script"
           :code
         ]
       ]
@@ -125,10 +125,6 @@
         :scene
       ]
       [
-        "/Scripts/JSONTesting.script"
-        :code
-      ]
-      [
         "/Scripts/WeightGameGUI.gui_script"
         :code
       ]
@@ -142,6 +138,10 @@
       ]
       [
         "/Scripts/Loader.script"
+        :code
+      ]
+      [
+        "/Scripts/JSONTesting.script"
         :code
       ]
     ]
