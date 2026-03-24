@@ -10,36 +10,8 @@
     :open-tabs [
       [
         [
-          "/Test Collections/WeightGame.collection"
-          :scene
-        ]
-        [
-          "/Scripts/JSONTesting.script"
-          :code
-        ]
-        [
           "/Scripts/WeightGameGUI.gui_script"
           :code
-        ]
-        [
-          "/GUIs/Weight Game.gui"
-          :scene
-        ]
-        [
-          "/Scripts/Title Screen.script"
-          :code
-        ]
-        [
-          "/JsonData/pokemon.json"
-          :code
-        ]
-        [
-          "/game.project"
-          :cljfx-form-view
-        ]
-        [
-          "/input/game.input_binding"
-          :cljfx-form-view
         ]
       ]
     ]
@@ -137,6 +109,30 @@
         :code
       ]
       [
+        "/builtins/input/all.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/input/game.input_binding"
+        :cljfx-form-view
+      ]
+      [
+        "/JsonData/pokemon.json"
+        :code
+      ]
+      [
+        "/Scripts/Title Screen.script"
+        :code
+      ]
+      [
+        "/GUIs/Weight Game.gui"
+        :scene
+      ]
+      [
         "/Test Collections/WeightGame.collection"
         :scene
       ]
@@ -145,32 +141,8 @@
         :code
       ]
       [
-        "/GUIs/Weight Game.gui"
-        :scene
-      ]
-      [
-        "/Scripts/Title Screen.script"
-        :code
-      ]
-      [
-        "/JsonData/pokemon.json"
-        :code
-      ]
-      [
         "/Scripts/WeightGameGUI.gui_script"
         :code
-      ]
-      [
-        "/builtins/input/all.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/input/game.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/game.project"
-        :cljfx-form-view
       ]
     ]
   }

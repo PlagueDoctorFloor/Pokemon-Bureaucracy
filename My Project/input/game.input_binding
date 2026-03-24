@@ -1,8 +1,4 @@
-key_trigger {
-  input: KEY_SPACE
-  action: "space"
-}
 mouse_trigger {
-  input: MOUSE_BUTTON_1
-  action: "touch"
+  input: MOUSE_BUTTON_LEFT
+  action: "LeftClick"
 }

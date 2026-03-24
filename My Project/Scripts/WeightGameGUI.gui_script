@@ -1,14 +1,122 @@
-
+-- Local Variables
+-- Score
 local score = 0
+-- Pokemon Weight Values
 local weight1 = 0
 local weight2 = 0
+-- Boolean for whether game is over
 local gameOver = false
 
+-- Executes First Time Script Loads
 function init(self)
+	
+	-- Get's Input Focus
 	msg.post(".", "acquire_input_focus")
+	-- Ensure's weightGameText is set to "Who Weighs More?"
 	gui.set_text(gui.get_node("WeightGameText"),"Who Weighs More?")
+	-- Ensure's Score displays as 0
 	gui.set_text(gui.get_node("score"),"Score: 0")
+	
 end
+
+-- Executes On Message
+function on_message(self, message_id, message, sender)
+	
+	-- If message_id is "UpdatePokemon"
+	if message_id == hash("UpdatePokemon") then
+		-- Set both name text nodes to the appropriate name passed from the newMons() function in JSONTesting
+		gui.set_text(gui.get_node("pokemon1Name"), message.name1)
+		gui.set_text(gui.get_node("pokemon2Name"), message.name2)
+		-- Save weight of each pokemon
+		weight1 = message.weight1
+		weight2 = message.weight2
+	end
+	
+end
+
+-- Executes upon input
+function on_input(self, action_id, action)
+	-- When left mouse is pressed (not released) (only executes once upon click)
+	if action_id == hash("LeftClick") and action.pressed then 
+
+		-- If game over flag is not triggered
+		if gameOver == false then
+			-- Get the buttons 
+			-- Button For Pokemon1
+			local pokemon1 = gui.get_node("pokemon1")
+			-- Button For Pokemon2 
+			local pokemon2 = gui.get_node("pokemon2")
+
+			-- If pokemon1 button is clicked
+			if gui.pick_node(pokemon1, action.x, action.y) then
+				-- Check if pokemon1's weight is greater then pokemon2's
+				-- If Pokemon1's weight is heavier than pokemon2's
+				if weight1 > weight2 then
+					-- Update Score
+					score = score+1
+					-- Update score text
+					gui.set_text(gui.get_node("score"),"Score: "..score)
+					-- Call UIandSpawner script to spawn new pokemon
+					msg.post("UIandSpawner","newMons")
+				-- If Pokemon1 is lighter than Pokemon2
+				else 
+					-- Flag Gameover
+					gameOver = true
+					-- Set weightgametext to Game Over
+					gui.set_text(gui.get_node("WeightGameText"),"Game Over")
+					-- Set hidden pokemon1weight textbox to pokemon1's weight, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon1Weight"),(weight1/10).." kgs")
+					-- Set pokemon1weight to visible
+					gui.set_visible(gui.get_node("Pokemon1Weight"),true)
+					-- Set hidden pokemon2weight textbox to pokemon1's weight, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon2Weight"),(weight2/10).." kgs")
+					-- Set pokemon2weight to visible
+					gui.set_visible(gui.get_node("Pokemon2Weight"),true)
+					-- Set tryAgain box and text to visible
+					gui.set_visible(gui.get_node("tryAgain"),true)
+					gui.set_visible(gui.get_node("tryAgainText"), true)
+				end
+			-- If pokemon2 button is clicked
+			elseif gui.pick_node(pokemon2, action.x, action.y) then
+				-- Check if pokemon2's weight is greater then pokemon1's
+				-- If Pokemon2's weight is heavier than pokemon1's
+				if weight2 > weight1 then
+					-- Update Score
+					score = score+1
+					-- Update score text
+					gui.set_text(gui.get_node("score"),"Score: "..score)
+					-- Call UIandSpawner script to spawn new pokemon
+					msg.post("UIandSpawner","newMons")
+					-- If Pokemon2 is lighter than Pokemon2
+				else 
+					-- Flag Gameover
+					gameOver = true
+					-- Set weightgametext to Game Over
+					gui.set_text(gui.get_node("WeightGameText"),"Game Over")
+					-- Set hidden pokemon1weight textbox to pokemon1's weight, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon1Weight"),(weight1/10).." kgs")
+					-- Set pokemon1weight to visible
+					gui.set_visible(gui.get_node("Pokemon1Weight"),true)
+					-- Set hidden pokemon2weight textbox to pokemon1's weight, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon2Weight"),(weight2/10).." kgs")
+					-- Set pokemon2weight to visible
+					gui.set_visible(gui.get_node("Pokemon2Weight"),true)
+					-- Set tryAgain box and text to visible
+					gui.set_visible(gui.get_node("tryAgain"),true)
+					gui.set_visible(gui.get_node("tryAgainText"), true)
+				end
+
+			-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
+			elseif gameOver == true then
+				-- TODO: Add "TryAgain" button functionality
+				-- Get Called A Loser
+				print("Loser")
+			end
+		end
+	end
+end
+
+-- Unused Functions
 
 function final(self)
 	-- Add finalization code here
@@ -20,63 +128,6 @@ function update(self, dt)
 	-- Add update code here
 	-- Learn more: https://defold.com/manuals/script/
 	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	if message_id == hash("UpdatePokemon") then
-		gui.set_text(gui.get_node("pokemon1Name"), message.name1)
-		gui.set_text(gui.get_node("pokemon2Name"), message.name2)
-		weight1 = message.weight1
-		weight2 = message.weight2
-	end
-end
-
-function on_input(self, action_id, action)
-	-- When left mouse is pressed (not released)
-	if action_id == hash("LeftClick") and action.pressed then 
-
-		if gameOver == false then
-			-- Get the buttons 
-			-- Button For Pokemon1
-			local pokemon1 = gui.get_node("pokemon1")
-			-- Button For Pokemon2 
-			local pokemon2 = gui.get_node("pokemon2")
-		
-			if gui.pick_node(pokemon1, action.x, action.y) then
-				if weight1 > weight2 then
-					score = score+1
-					gui.set_text(gui.get_node("score"),"Score: "..score)
-					msg.post("UIandSpawner","newMons")
-				else 
-					gameOver = true
-					gui.set_text(gui.get_node("WeightGameText"),"Game Over")
-					gui.set_text(gui.get_node("Pokemon1Weight"),(weight1/10).." kgs")
-					gui.set_visible(gui.get_node("Pokemon1Weight"),true)
-					gui.set_text(gui.get_node("Pokemon2Weight"),(weight2/10).." kgs")
-					gui.set_visible(gui.get_node("Pokemon2Weight"),true)
-					gui.set_visible(gui.get_node("tryAgain"),true)
-					gui.set_visible(gui.get_node("tryAgainText"), true)
-				end
-			elseif gui.pick_node(pokemon2, action.x, action.y) then
-				if weight2 > weight1 then
-					score = score+1
-					gui.set_text(gui.get_node("score"),"Score: "..score)
-					msg.post("UIandSpawner","newMons")
-				else 
-					gameOver = true
-					gui.set_text(gui.get_node("WeightGameText"),"Game Over")
-					gui.set_text(gui.get_node("Pokemon1Weight"),(weight1/10).." kgs")
-					gui.set_visible(gui.get_node("Pokemon1Weight"),true)
-					gui.set_text(gui.get_node("Pokemon2Weight"),(weight2/10).." kgs")
-					gui.set_visible(gui.get_node("Pokemon2Weight"),true)
-					gui.set_visible(gui.get_node("tryAgain"),true)
-					gui.set_visible(gui.get_node("tryAgainText"), true)
-				end
-			elseif gameOver == true then
-				print("Loser")
-			end
-		end
-	end
 end
 
 function on_reload(self)
