@@ -3,7 +3,7 @@
     :breakpoints [
     ]
     :find {
-      :term "800"
+      :term "vmath.vector3(250,300,0)"
     }
   }
   :workflow {
@@ -16,10 +16,6 @@
       ]
     ]
     :recent-files [
-      [
-        "/Scripts/PassportFill.script"
-        :code
-      ]
       [
         "/Scripts/replace_mouse_cursor.script"
         :code
@@ -142,6 +138,10 @@
       ]
       [
         "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
+        "/Scripts/DataTracker.script"
         :code
       ]
     ]
