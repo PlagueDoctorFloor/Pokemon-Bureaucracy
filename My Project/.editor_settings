@@ -13,6 +13,14 @@
           "/Scripts/JSONTesting.script"
           :code
         ]
+        [
+          "/game.project"
+          :cljfx-form-view
+        ]
+        [
+          "/Test Collections/WeightGame.collection"
+          :scene
+        ]
       ]
     ]
     :recent-files [
@@ -117,10 +125,6 @@
         :scene
       ]
       [
-        "/Test Collections/WeightGame.collection"
-        :scene
-      ]
-      [
         "/Scripts/WeightGameGUI.gui_script"
         :code
       ]
@@ -129,19 +133,23 @@
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
         "/Scripts/Loader.script"
         :code
       ]
       [
-        "/Scripts/JSONTesting.script"
+        "/Scripts/DataTracker.script"
         :code
       ]
       [
-        "/Scripts/DataTracker.script"
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Test Collections/WeightGame.collection"
+        :scene
+      ]
+      [
+        "/Scripts/JSONTesting.script"
         :code
       ]
     ]

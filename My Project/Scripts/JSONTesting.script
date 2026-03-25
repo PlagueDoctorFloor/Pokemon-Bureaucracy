@@ -19,10 +19,11 @@ local function newMons()
 	-- print(chosenPokemon)
 
 	-- Call SpawnSprite to spawn an object
-	spawnSprite(chosenPokemon, vmath.vector3(250,300,0))
+	spawnSprite(chosenPokemon, vmath.vector3(175,400,0))
 
 	-- Selects a random number between 1 and 1025
 	local chosenPokemon2 = math.random(1025)
+
 	-- Rerolls if the same number is chosen as the first pokemon
 	while jsonTable[tostring(chosenPokemon)]["weight"] == jsonTable[tostring(chosenPokemon2)]["weight"] do
 		chosenPokemon2 = math.random(1025)
@@ -32,7 +33,7 @@ local function newMons()
 	-- print(chosenPokemon2)
 
 	-- Call SpawnSprite to spawn an object
-	spawnSprite(chosenPokemon2, vmath.vector3(750,300,0))
+	spawnSprite(chosenPokemon2, vmath.vector3(780,400,0))
 
 	-- Sends message to WeightGameGUI with message_id "UpdatePokemon" and a table containing the pokemon's names and weights
 	msg.post("#Weight Game","UpdatePokemon",{name1 = jsonTable[tostring(chosenPokemon)]["name"], weight1 = jsonTable[tostring(chosenPokemon)]["weight"], name2 = jsonTable[tostring(chosenPokemon2)]["name"], weight2 = jsonTable[tostring(chosenPokemon2)]["weight"]})
@@ -44,47 +45,47 @@ function spawnSprite(pokemonNumber,vector)
 	local img = tostring(pokemonNumber) .. "-1"
 	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
 	if pokemonNumber <= 50 then
-		id = factory.create("#PokemonSprite1",vector)
+		id = factory.create("#PokemonSprite1",vector,nil,nil,3)
 	elseif pokemonNumber > 50 and pokemonNumber <=100 then
-		id = factory.create("#PokemonSprite2",vector)
+		id = factory.create("#PokemonSprite2",vector,nil,nil,3)
 	elseif pokemonNumber > 100 and pokemonNumber <=150 then
-		id = factory.create("#PokemonSprite3",vector)
+		id = factory.create("#PokemonSprite3",vector,nil,nil,3)
 	elseif pokemonNumber > 150 and pokemonNumber <=200 then
-		id = factory.create("#PokemonSprite4",vector)
+		id = factory.create("#PokemonSprite4",vector,nil,nil,3)
 	elseif pokemonNumber > 200 and pokemonNumber <=250 then
-		id = factory.create("#PokemonSprite5",vector)
+		id = factory.create("#PokemonSprite5",vector,nil,nil,3)
 	elseif pokemonNumber > 250 and pokemonNumber <=300 then
-		id = factory.create("#PokemonSprite6",vector)
+		id = factory.create("#PokemonSprite6",vector,nil,nil,3)
 	elseif pokemonNumber > 300 and pokemonNumber <=350 then
-		id = factory.create("#PokemonSprite7",vector)
+		id = factory.create("#PokemonSprite7",vector,nil,nil,3)
 	elseif pokemonNumber > 350 and pokemonNumber <=400 then
-		id = factory.create("#PokemonSprite8",vector)
+		id = factory.create("#PokemonSprite8",vector,nil,nil,3)
 	elseif pokemonNumber > 400 and pokemonNumber <=450 then
-		id = factory.create("#PokemonSprite9",vector)
+		id = factory.create("#PokemonSprite9",vector,nil,nil,3)
 	elseif pokemonNumber > 450 and pokemonNumber <=500 then
-		id = factory.create("#PokemonSprite10",vector)
+		id = factory.create("#PokemonSprite10",vector,nil,nil,3)
 	elseif pokemonNumber > 500 and pokemonNumber <=550 then
-		id = factory.create("#PokemonSprite11",vector)
+		id = factory.create("#PokemonSprite11",vector,nil,nil,3)
 	elseif pokemonNumber > 550 and pokemonNumber <=600 then
-		id = factory.create("#PokemonSprite12",vector)
+		id = factory.create("#PokemonSprite12",vector,nil,nil,3)
 	elseif pokemonNumber > 600 and pokemonNumber <=650 then
-		id = factory.create("#PokemonSprite13",vector)
+		id = factory.create("#PokemonSprite13",vector,nil,nil,3)
 	elseif pokemonNumber > 650 and pokemonNumber <=700 then
-		id = factory.create("#PokemonSprite14",vector)
+		id = factory.create("#PokemonSprite14",vector,nil,nil,3)
 	elseif pokemonNumber > 700 and pokemonNumber <=750 then
-		id = factory.create("#PokemonSprite15",vector)
+		id = factory.create("#PokemonSprite15",vector,nil,nil,3)
 	elseif pokemonNumber > 750 and pokemonNumber <=800 then
-		id = factory.create("#PokemonSprite16",vector)
+		id = factory.create("#PokemonSprite16",vector,nil,nil,3)
 	elseif pokemonNumber > 800 and pokemonNumber <=850 then
-		id = factory.create("#PokemonSprite17",vector)
+		id = factory.create("#PokemonSprite17",vector,nil,nil,3)
 	elseif pokemonNumber > 850 and pokemonNumber <=900 then
-		id = factory.create("#PokemonSprite18",vector)
+		id = factory.create("#PokemonSprite18",vector,nil,nil,3)
 	elseif pokemonNumber > 900 and pokemonNumber <=950 then
-		id = factory.create("#PokemonSprite19",vector)
+		id = factory.create("#PokemonSprite19",vector,nil,nil,3)
 	elseif pokemonNumber > 950 and pokemonNumber <=1000 then
-		id = factory.create("#PokemonSprite20",vector)
+		id = factory.create("#PokemonSprite20",vector,nil,nil,3)
 	elseif pokemonNumber > 1000 and pokemonNumber <=1050 then
-		id = factory.create("#PokemonSprite21",vector)
+		id = factory.create("#PokemonSprite21",vector,nil,nil,3)
 	end
 	-- Inserts the ID in the spawnedSprites table
 	table.insert(spawnedSprites, id)
