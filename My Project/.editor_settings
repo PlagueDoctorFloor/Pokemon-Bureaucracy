@@ -10,24 +10,12 @@
     :open-tabs [
       [
         [
-          "/Scripts/JSONTesting.script"
-          :code
-        ]
-        [
-          "/Test Collections/WeightGame.collection"
-          :scene
-        ]
-        [
           "/Scripts/WeightGameGUI.gui_script"
           :code
         ]
       ]
     ]
     :recent-files [
-      [
-        "/Scripts/replace_mouse_cursor.script"
-        :code
-      ]
       [
         "/Art/atlases/PokemonSprites21.atlas"
         :scene
@@ -81,10 +69,6 @@
         :scene
       ]
       [
-        "/Scripts/DragSpawningScript.script"
-        :code
-      ]
-      [
         "/Test Collections/Title.collection"
         :scene
       ]
@@ -105,10 +89,6 @@
         :scene
       ]
       [
-        "/Scripts/cursor.script"
-        :code
-      ]
-      [
         "/builtins/input/all.input_binding"
         :cljfx-form-view
       ]
@@ -125,11 +105,15 @@
         :scene
       ]
       [
-        "/Scripts/Title Screen.script"
-        :code
+        "/game.project"
+        :cljfx-form-view
       ]
       [
-        "/Scripts/Loader.script"
+        "/Test Collections/WeightGame.collection"
+        :scene
+      ]
+      [
+        "/Scripts/cursor.script"
         :code
       ]
       [
@@ -137,16 +121,24 @@
         :code
       ]
       [
-        "/game.project"
-        :cljfx-form-view
+        "/Scripts/DragSpawningScript.script"
+        :code
       ]
       [
         "/Scripts/JSONTesting.script"
         :code
       ]
       [
-        "/Test Collections/WeightGame.collection"
-        :scene
+        "/Scripts/Loader.script"
+        :code
+      ]
+      [
+        "/Scripts/replace_mouse_cursor.script"
+        :code
+      ]
+      [
+        "/Scripts/Title Screen.script"
+        :code
       ]
       [
         "/Scripts/WeightGameGUI.gui_script"

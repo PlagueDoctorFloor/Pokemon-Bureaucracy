@@ -39,6 +39,8 @@ local function newMons()
 	msg.post("#Weight Game","UpdatePokemon",{name1 = jsonTable[tostring(chosenPokemon)]["name"], weight1 = jsonTable[tostring(chosenPokemon)]["weight"], name2 = jsonTable[tostring(chosenPokemon2)]["name"], weight2 = jsonTable[tostring(chosenPokemon2)]["weight"]})
 end
 
+-- Custom function which determines which factory to call to spawn an object with the right sprite
+-- Takes in the pokemon number and the vector placement of the sprite
 function spawnSprite(pokemonNumber,vector)
 	
 	-- Conncatinates a string to match the name of (most) of the pictures

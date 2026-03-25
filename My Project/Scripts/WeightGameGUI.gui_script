@@ -7,17 +7,22 @@ local weight2 = 0
 -- Boolean for whether game is over
 local gameOver = false
 
+-- Custom function which resets all the values so the game can be played again
 local function Reset()
+	-- Reset variables to original state
 	score = 0
 	weight1 = 0
 	weight2 = 0
 	gameOver = false
+	-- Set On Screen Text Back To Original 
 	gui.set_text(gui.get_node("WeightGameText"),"Who Weighs More?")
 	gui.set_text(gui.get_node("score"),"Score: 0")
+	-- Set GameOver nodes to invisible 
 	gui.set_visible(gui.get_node("Pokemon1Weight"),false)
 	gui.set_visible(gui.get_node("Pokemon2Weight"),false)
 	gui.set_visible(gui.get_node("tryAgain"),false)
 	gui.set_visible(gui.get_node("tryAgainText"),false)
+	-- Send message to UIandSpawner/JSONTesting to spawn new pokemon
 	msg.post("UIandSpawner","newMons")
 end
 
@@ -122,11 +127,11 @@ function on_input(self, action_id, action)
 			end
 		-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
 		elseif gameOver == true then
-			-- TODO: Add "TryAgain" button functionality
-			-- Get Called A Loser
-			print("Loser")
+			-- Get's tryAgain node
 			local tryAgain = gui.get_node("tryAgain")
+			-- If the user clicks on the tryAgain button
 			if gui.pick_node(tryAgain, action.x, action.y) then
+				-- Call the reset function
 				Reset()		
 			end
 		end
