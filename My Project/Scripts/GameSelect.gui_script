@@ -1,0 +1,58 @@
+
+
+function init(self)
+	-- Get's Input Focus
+	msg.post(".", "acquire_input_focus")
+	-- Ensure's heightGameText is set to "Who's Taller?"
+	gui.set_text(gui.get_node("GameSelectText"),"Test Your Knowledge")
+	gui.set_text(gui.get_node("weightGameText"),"Weight\nGame")
+	gui.set_text(gui.get_node("heightGameText"),"Height\nGame")
+	-- Sets High Score Text
+	gui.set_text(gui.get_node("weightHighScore"),"High Score: "..WeightGameHighScore)
+	gui.set_text(gui.get_node("heightHighScore"),"High Score: "..HeightGameHighScore)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("LeftClick") and action.pressed then 
+		-- Get the buttons 
+		-- Button For Pokemon1
+		local weightGame = gui.get_node("WeightGame")
+		-- Button For Pokemon2 
+		local heightGame = gui.get_node("HeightGame")
+
+		-- If pokemon1 button is clicked
+		if gui.pick_node(weightGame, action.x, action.y) then
+			print("Weight Game")
+			msg.post("Loader:/Loader", "load Weight Game")
+		elseif gui.pick_node(heightGame, action.x, action.y) then
+			print("Height Game")
+			msg.post("Loader:/Loader", "load Height Game")
+		end
+	end
+end
+
+
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

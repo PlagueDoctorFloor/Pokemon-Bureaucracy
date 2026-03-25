@@ -1,0 +1,141 @@
+script: "/Scripts/GameSelect.gui_script"
+fonts {
+  name: "PokemonHeaders"
+  font: "/Fonts/PokemonHeaders.font"
+}
+nodes {
+  position {
+    x: 240.0
+    y: 320.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  type: TYPE_BOX
+  id: "WeightGame"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 720.0
+    y: 320.0
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  type: TYPE_BOX
+  id: "HeightGame"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 240.0
+    y: 320.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Weight \n"
+  "\n"
+  "Game\n"
+  ""
+  font: "PokemonHeaders"
+  id: "weightGameText"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 720.0
+    y: 320.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Height \n"
+  "\n"
+  "Game\n"
+  ""
+  font: "PokemonHeaders"
+  id: "heightGameText"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 200.0
+    y: 190.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "High Score:\n"
+  ""
+  font: "PokemonHeaders"
+  id: "weightHighScore"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 680.0
+    y: 190.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "High Score:\n"
+  ""
+  font: "PokemonHeaders"
+  id: "heightHighScore"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 480.0
+    y: 540.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Test Your Knowledge\n"
+  ""
+  font: "PokemonHeaders"
+  id: "GameSelectText"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

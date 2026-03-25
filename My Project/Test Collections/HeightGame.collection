@@ -1,0 +1,6 @@
+name: "HeightGame"
+instances {
+  id: "HeightGame"
+  prototype: "/Test Objects/HeightGame.go"
+}
+scale_along_z: 0

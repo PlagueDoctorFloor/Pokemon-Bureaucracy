@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /Test Collections/WeightGame.collectionc
+main_collection = /Test Collections/Loader.collectionc
 
 [script]
 shared_state = 1

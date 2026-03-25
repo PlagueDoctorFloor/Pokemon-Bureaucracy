@@ -13,7 +13,7 @@ function on_input(self, action_id, action)
 		-- Prints ackniwledgement for debuggin
 		print("Action pressed")
 		-- Sends message to loader to load the weight game
-		msg.post("Loader:/Loader", "load Weight Game")
+		msg.post("Loader:/Loader", "load Game Select")
 	end
 end
 

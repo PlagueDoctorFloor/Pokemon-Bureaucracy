@@ -1,3 +1,10 @@
+
+WeightGameHighScore = 0
+
+HeightGameHighScore = 0
+
+
+
 function init(self)
 	-- Add initialization code here
 	-- Learn more: https://defold.com/manuals/script/

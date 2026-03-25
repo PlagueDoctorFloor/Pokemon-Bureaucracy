@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "UIandSpawner"
-  prototype: "/Test Objects/Text Test.go"
+  prototype: "/Test Objects/WeightGame.go"
   position {
     x: 500.0
     y: 100.0

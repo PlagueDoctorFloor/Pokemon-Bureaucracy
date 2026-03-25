@@ -1,4 +1,4 @@
-script: "/Scripts/Weight Game/WeightGameGUI.gui_script"
+script: "/Scripts/Height Game/HeightGameGUI.gui_script"
 fonts {
   name: "PokemonBodyBold"
   font: "/Fonts/PokemonBodyBold.font"
@@ -63,9 +63,9 @@ nodes {
     y: 100.0
   }
   type: TYPE_TEXT
-  text: "Who Weighs More?"
+  text: "Who\'s Taller?"
   font: "PokemonHeaders"
-  id: "WeightGameText"
+  id: "HeightGameText"
   inherit_alpha: true
 }
 nodes {
@@ -156,7 +156,7 @@ nodes {
   type: TYPE_TEXT
   text: "<text>"
   font: "PokemonBodyHeavy"
-  id: "Pokemon1Weight"
+  id: "Pokemon1Height"
   inherit_alpha: true
   visible: false
 }
@@ -172,7 +172,7 @@ nodes {
   type: TYPE_TEXT
   text: "<text>"
   font: "PokemonBodyHeavy"
-  id: "Pokemon2Weight"
+  id: "Pokemon2Height"
   inherit_alpha: true
   visible: false
 }

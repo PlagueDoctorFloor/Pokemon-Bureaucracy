@@ -35,6 +35,8 @@ function init(self)
 	gui.set_text(gui.get_node("WeightGameText"),"Who Weighs More?")
 	-- Ensure's Score displays as 0
 	gui.set_text(gui.get_node("score"),"Score: 0")
+
+	gui.set_text(gui.get_node("HighScore"),"High Score: "..WeightGameHighScore)
 	
 end
 
@@ -94,6 +96,10 @@ function on_input(self, action_id, action)
 					-- Set tryAgain box and text to visible
 					gui.set_visible(gui.get_node("tryAgain"),true)
 					gui.set_visible(gui.get_node("tryAgainText"), true)
+					if score > WeightGameHighScore then
+						WeightGameHighScore = score
+						gui.set_text(gui.get_node("HighScore"),"High Score: "..WeightGameHighScore)
+					end
 				end
 			-- If pokemon2 button is clicked
 			elseif gui.pick_node(pokemon2, action.x, action.y) then
@@ -123,9 +129,13 @@ function on_input(self, action_id, action)
 					-- Set tryAgain box and text to visible
 					gui.set_visible(gui.get_node("tryAgain"),true)
 					gui.set_visible(gui.get_node("tryAgainText"), true)
+					if score > WeightGameHighScore then
+						WeightGameHighScore = score
+						gui.set_text(gui.get_node("HighScore"),"High Score: "..WeightGameHighScore)
+					end
 				end
 			end
-		-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
+			-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
 		elseif gameOver == true then
 			-- Get's tryAgain node
 			local tryAgain = gui.get_node("tryAgain")

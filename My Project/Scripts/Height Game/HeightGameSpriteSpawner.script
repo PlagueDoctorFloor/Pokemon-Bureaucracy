@@ -1,0 +1,155 @@
+------------------------------------------------------------------------------------------ 
+-- This script accesses the pokemon JSON file and spawns objects to display their sprite
+-- it passes information from the JSON file to the WeightGameGUI so it can display
+-- that information. 
+-- TIED TO: WeightGame Collection, WeightGameGUI Script
+------------------------------------------------------------------------------------------
+
+-- Create a variable to hold the JSONtable
+local jsonTable
+-- Create a dictionary to keep track of the spawned sprites 
+local spawnedSprites = {}
+
+-- Custom Function to select a random pokemon and display it's photo
+local function newMons()
+	-- Selects a random number between 1 and 1025
+	local chosenPokemon = math.random(1025)
+
+	-- Prints the number for debugging purposes
+	-- print(chosenPokemon)
+
+	-- Call SpawnSprite to spawn an object
+	spawnSprite(chosenPokemon, vmath.vector3(175,400,0))
+
+	-- Selects a random number between 1 and 1025
+	local chosenPokemon2 = math.random(1025)
+
+	-- Rerolls if the same number is chosen as the first pokemon
+	while jsonTable[tostring(chosenPokemon)]["height"] == jsonTable[tostring(chosenPokemon2)]["height"] do
+		chosenPokemon2 = math.random(1025)
+	end
+	
+	-- Prints for debugging purposes 
+	-- print(chosenPokemon2)
+
+	-- Call SpawnSprite to spawn an object
+	spawnSprite(chosenPokemon2, vmath.vector3(780,400,0))
+
+	-- Sends message to WeightGameGUI with message_id "UpdatePokemon" and a table containing the pokemon's names and weights
+	msg.post("#Height Game","UpdatePokemon",{name1 = jsonTable[tostring(chosenPokemon)]["name"], height1 = jsonTable[tostring(chosenPokemon)]["height"], name2 = jsonTable[tostring(chosenPokemon2)]["name"], height2 = jsonTable[tostring(chosenPokemon2)]["height"]})
+end
+
+-- Custom function which determines which factory to call to spawn an object with the right sprite
+-- Takes in the pokemon number and the vector placement of the sprite
+function spawnSprite(pokemonNumber,vector)
+	
+	-- Conncatinates a string to match the name of (most) of the pictures
+	local img = tostring(pokemonNumber) .. "-1"
+	-- Determines which factory contains the sprite, spawns an instance and saves it's ID
+	if pokemonNumber <= 50 then
+		id = factory.create("#PokemonSprite1",vector,nil,nil,3)
+	elseif pokemonNumber > 50 and pokemonNumber <=100 then
+		id = factory.create("#PokemonSprite2",vector,nil,nil,3)
+	elseif pokemonNumber > 100 and pokemonNumber <=150 then
+		id = factory.create("#PokemonSprite3",vector,nil,nil,3)
+	elseif pokemonNumber > 150 and pokemonNumber <=200 then
+		id = factory.create("#PokemonSprite4",vector,nil,nil,3)
+	elseif pokemonNumber > 200 and pokemonNumber <=250 then
+		id = factory.create("#PokemonSprite5",vector,nil,nil,3)
+	elseif pokemonNumber > 250 and pokemonNumber <=300 then
+		id = factory.create("#PokemonSprite6",vector,nil,nil,3)
+	elseif pokemonNumber > 300 and pokemonNumber <=350 then
+		id = factory.create("#PokemonSprite7",vector,nil,nil,3)
+	elseif pokemonNumber > 350 and pokemonNumber <=400 then
+		id = factory.create("#PokemonSprite8",vector,nil,nil,3)
+	elseif pokemonNumber > 400 and pokemonNumber <=450 then
+		id = factory.create("#PokemonSprite9",vector,nil,nil,3)
+	elseif pokemonNumber > 450 and pokemonNumber <=500 then
+		id = factory.create("#PokemonSprite10",vector,nil,nil,3)
+	elseif pokemonNumber > 500 and pokemonNumber <=550 then
+		id = factory.create("#PokemonSprite11",vector,nil,nil,3)
+	elseif pokemonNumber > 550 and pokemonNumber <=600 then
+		id = factory.create("#PokemonSprite12",vector,nil,nil,3)
+	elseif pokemonNumber > 600 and pokemonNumber <=650 then
+		id = factory.create("#PokemonSprite13",vector,nil,nil,3)
+	elseif pokemonNumber > 650 and pokemonNumber <=700 then
+		id = factory.create("#PokemonSprite14",vector,nil,nil,3)
+	elseif pokemonNumber > 700 and pokemonNumber <=750 then
+		id = factory.create("#PokemonSprite15",vector,nil,nil,3)
+	elseif pokemonNumber > 750 and pokemonNumber <=800 then
+		id = factory.create("#PokemonSprite16",vector,nil,nil,3)
+	elseif pokemonNumber > 800 and pokemonNumber <=850 then
+		id = factory.create("#PokemonSprite17",vector,nil,nil,3)
+	elseif pokemonNumber > 850 and pokemonNumber <=900 then
+		id = factory.create("#PokemonSprite18",vector,nil,nil,3)
+	elseif pokemonNumber > 900 and pokemonNumber <=950 then
+		id = factory.create("#PokemonSprite19",vector,nil,nil,3)
+	elseif pokemonNumber > 950 and pokemonNumber <=1000 then
+		id = factory.create("#PokemonSprite20",vector,nil,nil,3)
+	elseif pokemonNumber > 1000 and pokemonNumber <=1050 then
+		id = factory.create("#PokemonSprite21",vector,nil,nil,3)
+	end
+	-- Inserts the ID in the spawnedSprites table
+	table.insert(spawnedSprites, id)
+	-- Sends a message to the spawned instance to display the correct image 
+	msg.post(id,"play_animation", {id = hash(img)})
+
+end
+
+-- When the collection loads for the first time
+function init(self)
+	-- Randomize Seed
+	math.randomseed(os.clock() * 100000000000)
+	-- Load the JSON file
+	local test_json_file = sys.load_resource("/res/json/pokemon.json")
+	-- Decode the JSON file and save to a variable for use
+	jsonTable = json.decode(test_json_file)
+
+	-- Call newMons() to display a pair of pokemon
+	newMons()
+end
+
+-- On receiving a message
+function on_message(self, message_id, message, sender)
+	-- When getting a "newMons" message from WeightGameGUI
+	if message_id == hash("newMons") then
+		-- delete the current sprites
+		go.delete(spawnedSprites)
+		-- Clear spawnedSprites dictionary
+		spawnedSprites = {}
+		-- Call newMons to display 2 more
+		newMons()
+	end
+end
+
+-- When input is recieved
+function on_input(self, action_id, action)
+	-- Old Material Removed
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

@@ -14,3 +14,15 @@ embedded_components {
   data: "collection: \"/Test Collections/WeightGame.collection\"\n"
   ""
 }
+embedded_components {
+  id: "HeightGame"
+  type: "collectionproxy"
+  data: "collection: \"/Test Collections/HeightGame.collection\"\n"
+  ""
+}
+embedded_components {
+  id: "GameSelect"
+  type: "collectionproxy"
+  data: "collection: \"/Test Collections/GameSelect.collection\"\n"
+  ""
+}

@@ -1,0 +1,168 @@
+-- Local Variables
+-- Score
+local score = 0
+-- Pokemon Height Values
+local height1 = 0
+local height2 = 0
+-- Boolean for whether game is over
+local gameOver = false
+
+-- Custom function which resets all the values so the game can be played again
+local function Reset()
+	-- Reset variables to original state
+	score = 0
+	height1 = 0
+	height2 = 0
+	gameOver = false
+	-- Set On Screen Text Back To Original 
+	gui.set_text(gui.get_node("HeightGameText"),"Who's Taller?")
+	gui.set_text(gui.get_node("score"),"Score: 0")
+	-- Set GameOver nodes to invisible 
+	gui.set_visible(gui.get_node("Pokemon1Height"),false)
+	gui.set_visible(gui.get_node("Pokemon2Height"),false)
+	gui.set_visible(gui.get_node("tryAgain"),false)
+	gui.set_visible(gui.get_node("tryAgainText"),false)
+	-- Send message to UIandSpawner/JSONTesting to spawn new pokemon
+	msg.post("HeightGame","newMons")
+end
+
+-- Executes First Time Script Loads
+function init(self)
+	
+	-- Get's Input Focus
+	msg.post(".", "acquire_input_focus")
+	-- Ensure's heightGameText is set to "Who's Taller?"
+	gui.set_text(gui.get_node("HeightGameText"),"Who's Taller?")
+	-- Ensure's Score displays as 0
+	gui.set_text(gui.get_node("score"),"Score: 0")
+
+	gui.set_text(gui.get_node("HighScore"),"High Score: "..HeightGameHighScore)
+end
+
+-- Executes On Message
+function on_message(self, message_id, message, sender)
+	
+	-- If message_id is "UpdatePokemon"
+	if message_id == hash("UpdatePokemon") then
+		-- Set both name text nodes to the appropriate name passed from the newMons() function in JSONTesting
+		gui.set_text(gui.get_node("pokemon1Name"), message.name1)
+		gui.set_text(gui.get_node("pokemon2Name"), message.name2)
+		-- Save height of each pokemon
+		height1 = message.height1
+		height2 = message.height2
+	end
+	
+end
+
+-- Executes upon input
+function on_input(self, action_id, action)
+	-- When left mouse is pressed (not released) (only executes once upon click)
+	if action_id == hash("LeftClick") and action.pressed then 
+
+		-- If game over flag is not triggered
+		if gameOver == false then
+			-- Get the buttons 
+			-- Button For Pokemon1
+			local pokemon1 = gui.get_node("pokemon1")
+			-- Button For Pokemon2 
+			local pokemon2 = gui.get_node("pokemon2")
+
+			-- If pokemon1 button is clicked
+			if gui.pick_node(pokemon1, action.x, action.y) then
+				-- Check if pokemon1's height is greater then pokemon2's
+				-- If Pokemon1's height is greater than pokemon2's
+				if height1 > height2 then
+					-- Update Score
+					score = score+1
+					-- Update score text
+					gui.set_text(gui.get_node("score"),"Score: "..score)
+					-- Call HeightGame script to spawn new pokemon
+					msg.post("HeightGame","newMons")
+				-- If Pokemon1 is shorter than Pokemon2
+				else 
+					-- Flag Gameover
+					gameOver = true
+					-- Set heightgametext to Game Over
+					gui.set_text(gui.get_node("HeightGameText"),"Game Over")
+					-- Set hidden pokemon1height textbox to pokemon1's height, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon1Height"),(height1/10).." m")
+					-- Set pokemon1height to visible
+					gui.set_visible(gui.get_node("Pokemon1Height"),true)
+					-- Set hidden pokemon2height textbox to pokemon1's height, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon2Height"),(height2/10).." m")
+					-- Set pokemon2height to visible
+					gui.set_visible(gui.get_node("Pokemon2Height"),true)
+					-- Set tryAgain box and text to visible
+					gui.set_visible(gui.get_node("tryAgain"),true)
+					gui.set_visible(gui.get_node("tryAgainText"), true)
+					if score > HeightGameHighScore then
+						HeightGameHighScore = score
+						gui.set_text(gui.get_node("HighScore"),"High Score: "..HeightGameHighScore)
+					end
+				end
+			-- If pokemon2 button is clicked
+			elseif gui.pick_node(pokemon2, action.x, action.y) then
+				-- Check if pokemon2's height is greater then pokemon1's
+				-- If Pokemon2's height is greater than pokemon1's
+				if height2 > height1 then
+					-- Update Score
+					score = score+1
+					-- Update score text
+					gui.set_text(gui.get_node("score"),"Score: "..score)
+					-- Call UIandSpawner script to spawn new pokemon
+					msg.post("HeightGame","newMons")
+				-- If Pokemon2 is shorter than Pokemon1
+				else 
+					-- Flag Gameover
+					gameOver = true
+					-- Set heightgametext to Game Over
+					gui.set_text(gui.get_node("HeightGameText"),"Game Over")
+					-- Set hidden pokemon1height textbox to pokemon1's height, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon1Height"),(height1/10).." m")
+					-- Set pokemon1height to visible
+					gui.set_visible(gui.get_node("Pokemon1Height"),true)
+					-- Set hidden pokemon2height textbox to pokemon1's height, displayed in kg's
+					gui.set_text(gui.get_node("Pokemon2Height"),(height2/10).." m")
+					-- Set pokemon2height to visible
+					gui.set_visible(gui.get_node("Pokemon2Height"),true)
+					-- Set tryAgain box and text to visible
+					gui.set_visible(gui.get_node("tryAgain"),true)
+					gui.set_visible(gui.get_node("tryAgainText"), true)
+					if score > HeightGameHighScore then
+						HeightGameHighScore = score
+						gui.set_text(gui.get_node("HighScore"),"High Score: "..HeightGameHighScore)
+					end
+				end
+			end
+		-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
+		elseif gameOver == true then
+			-- Get's tryAgain node
+			local tryAgain = gui.get_node("tryAgain")
+			-- If the user clicks on the tryAgain button
+			if gui.pick_node(tryAgain, action.x, action.y) then
+				-- Call the reset function
+				Reset()		
+			end
+		end
+	end
+end
+
+-- Unused Functions
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

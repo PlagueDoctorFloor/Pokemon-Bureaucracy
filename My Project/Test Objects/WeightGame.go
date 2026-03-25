@@ -1,6 +1,6 @@
 components {
   id: "JSONTesting"
-  component: "/Scripts/JSONTesting.script"
+  component: "/Scripts/Weight Game/WeightGameSpriteSpawner.script"
 }
 components {
   id: "Weight Game"
