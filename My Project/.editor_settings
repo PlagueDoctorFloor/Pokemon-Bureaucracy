@@ -14,12 +14,12 @@
           :code
         ]
         [
-          "/game.project"
-          :cljfx-form-view
-        ]
-        [
           "/Test Collections/WeightGame.collection"
           :scene
+        ]
+        [
+          "/Scripts/WeightGameGUI.gui_script"
+          :code
         ]
       ]
     ]
@@ -125,10 +125,6 @@
         :scene
       ]
       [
-        "/Scripts/WeightGameGUI.gui_script"
-        :code
-      ]
-      [
         "/Scripts/Title Screen.script"
         :code
       ]
@@ -145,11 +141,15 @@
         :cljfx-form-view
       ]
       [
+        "/Scripts/JSONTesting.script"
+        :code
+      ]
+      [
         "/Test Collections/WeightGame.collection"
         :scene
       ]
       [
-        "/Scripts/JSONTesting.script"
+        "/Scripts/WeightGameGUI.gui_script"
         :code
       ]
     ]

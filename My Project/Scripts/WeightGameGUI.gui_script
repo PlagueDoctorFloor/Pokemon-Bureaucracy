@@ -7,6 +7,20 @@ local weight2 = 0
 -- Boolean for whether game is over
 local gameOver = false
 
+local function Reset()
+	score = 0
+	weight1 = 0
+	weight2 = 0
+	gameOver = false
+	gui.set_text(gui.get_node("WeightGameText"),"Who Weighs More?")
+	gui.set_text(gui.get_node("score"),"Score: 0")
+	gui.set_visible(gui.get_node("Pokemon1Weight"),false)
+	gui.set_visible(gui.get_node("Pokemon2Weight"),false)
+	gui.set_visible(gui.get_node("tryAgain"),false)
+	gui.set_visible(gui.get_node("tryAgainText"),false)
+	msg.post("UIandSpawner","newMons")
+end
+
 -- Executes First Time Script Loads
 function init(self)
 	
@@ -105,12 +119,15 @@ function on_input(self, action_id, action)
 					gui.set_visible(gui.get_node("tryAgain"),true)
 					gui.set_visible(gui.get_node("tryAgainText"), true)
 				end
-
-			-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
-			elseif gameOver == true then
-				-- TODO: Add "TryAgain" button functionality
-				-- Get Called A Loser
-				print("Loser")
+			end
+		-- If gameOver flag is tripped, don't read input of clicking on pokemon buttons
+		elseif gameOver == true then
+			-- TODO: Add "TryAgain" button functionality
+			-- Get Called A Loser
+			print("Loser")
+			local tryAgain = gui.get_node("tryAgain")
+			if gui.pick_node(tryAgain, action.x, action.y) then
+				Reset()		
 			end
 		end
 	end
