@@ -22,3 +22,6 @@ include_dirs =
 [input]
 game_binding = /input/game.input_bindingc
 
+[physics]
+world_count = 10
+

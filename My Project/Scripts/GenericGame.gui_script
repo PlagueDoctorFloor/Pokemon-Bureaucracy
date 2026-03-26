@@ -1,0 +1,89 @@
+-- Local Variables
+-- Game Type
+local gameValue = 0
+-- Score
+local score = 0
+-- Pokemon Weight Values
+local value1 = 0
+local value2 = 0
+-- Boolean for whether game is over
+local gameOver = false
+
+-- Custom function which resets all the values so the game can be played again
+local function Reset()
+	-- Reset variables to original state
+	score = 0
+	value1 = 0
+	value2 = 0
+	gameOver = false
+	-- Set On Screen Text Back To Original 
+	gui.set_text(gui.get_node("WeightGameText"),"Who Weighs More?")
+	gui.set_text(gui.get_node("score"),"Score: 0")
+	-- Set GameOver nodes to invisible 
+	gui.set_visible(gui.get_node("Pokemon1Weight"),false)
+	gui.set_visible(gui.get_node("Pokemon2Weight"),false)
+	gui.set_visible(gui.get_node("tryAgain"),false)
+	gui.set_visible(gui.get_node("tryAgainText"),false)
+	-- Send message to UIandSpawner/JSONTesting to spawn new pokemon
+	msg.post("UIandSpawner","newMons")
+end
+
+
+function init(self)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+-- Executes On Message
+function on_message(self, message_id, message, sender)
+
+	if message_id == hash("weight") then
+		print("Weight Received")
+	end
+
+	if message_id == hash("height") then
+		print("Height Received")
+	end
+
+	-- If message_id is "UpdatePokemon"
+	if message_id == hash("UpdatePokemon") then
+		-- Set both name text nodes to the appropriate name passed from the newMons() function in JSONTesting
+		gui.set_text(gui.get_node("pokemon1Name"), message.name1)
+		gui.set_text(gui.get_node("pokemon2Name"), message.name2)
+		-- Save weight of each pokemon
+		weight1 = message.weight1
+		weight2 = message.weight2
+	end
+
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here. The game object this script is attached to
+	-- must have acquired input focus:
+	--
+	--    msg.post(".", "acquire_input_focus")
+	--
+	-- All mapped input bindings will be received. Mouse and touch input will
+	-- be received regardless of where on the screen it happened.
+	-- Learn more: https://defold.com/manuals/input/
+	-- Remove this function if not needed
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

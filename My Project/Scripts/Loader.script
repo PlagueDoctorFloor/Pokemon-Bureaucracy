@@ -2,6 +2,8 @@ WeightGameHighScore = 0
 
 HeightGameHighScore = 0
 
+-- Title Screen, Game Select, 
+local proxiesLoaded = {0,0,0,0}
 
 -- Executes the first time the script is loaded
 function init(self)
@@ -9,36 +11,51 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	-- Loads the title screen
 	msg.post("#TitleScreen", "load")
+	msg.post("#GameSelect", "load")
+	msg.post("#GenericGame", "load")
+	--msg.post("#HeightGame", "load")
+	--msg.post("#WeightGame", "load")
 end
 
 -- Executes when it receives a message
 function on_message(self, message_id, message, sender)
 	-- Sent back from the proxy's after they are asked to load
 	if message_id == hash("proxy_loaded") then
+
 		-- Tells the sender (proxy which was loaded) to initialize (execute init() code)
 		msg.post(sender, "init")
-		-- enables the sender
-		-- TODO: See If There's A Better Way To Do This
-		msg.post(sender, "enable")
+		
+		if sender.fragment == hash("TitleScreen") then
+			msg.post(sender, "enable")
+		end
+
 	end
 	if message_id == hash("load Game Select") then
-		-- Sents message to weightGame proxy to load
-		msg.post("#GameSelect","load")
-		-- Disables TitleScreen
 		msg.post("#TitleScreen","disable")
+
+		msg.post("#GameSelect", "enable")
 	end
+	
+	if message_id == hash("load Game Select from weight") then
+		-- Sents message to weightGame proxy to load
+		msg.post("#GameSelect","enable")
+		-- Disables TitleScreen
+		msg.post("#WeightGame","disable")
+	end
+	
 	-- Message sent to load weight game specifically
 	if message_id == hash("load Weight Game") then
-		-- Sents message to weightGame proxy to load
-		msg.post("#WeightGame","load")
-		-- Disables TitleScreen
 		msg.post("#GameSelect","disable")
+
+		msg.post("#GenericGame","enable")
+		msg.post("GenericComparison:/ComparisonGame","weight")
 	end
+	
 	if message_id == hash("load Height Game") then
-		-- Sents message to weightGame proxy to load
-		msg.post("#HeightGame","load")
-		-- Disables TitleScreen
 		msg.post("#GameSelect","disable")
+
+		msg.post("#GenericGame","enable")
+		msg.post("GenericComparison:/ComparisonGame","height")
 	end
 end
 

@@ -26,3 +26,9 @@ embedded_components {
   data: "collection: \"/Test Collections/GameSelect.collection\"\n"
   ""
 }
+embedded_components {
+  id: "GenericGame"
+  type: "collectionproxy"
+  data: "collection: \"/Test Collections/GenericComparison.collection\"\n"
+  ""
+}

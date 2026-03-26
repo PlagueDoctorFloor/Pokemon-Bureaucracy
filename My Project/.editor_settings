@@ -10,35 +10,7 @@
     :open-tabs [
       [
         [
-          "/game.project"
-          :cljfx-form-view
-        ]
-        [
-          "/Test Collections/GameSelect.collection"
-          :scene
-        ]
-        [
-          "/Scripts/Loader.script"
-          :code
-        ]
-        [
-          "/Test Collections/Loader.collection"
-          :scene
-        ]
-        [
-          "/GUIs/Height Game.gui"
-          :scene
-        ]
-        [
-          "/GUIs/Weight Game.gui"
-          :scene
-        ]
-        [
-          "/Scripts/Weight Game/WeightGameSpriteSpawner.script"
-          :code
-        ]
-        [
-          "/Test Collections/GenericComparison.collection"
+          "/Test Objects/HeightGame.go"
           :scene
         ]
         [
@@ -46,24 +18,32 @@
           :scene
         ]
         [
-          "/Test Objects/HeightGame.go"
+          "/Test Collections/GenericComparison.collection"
           :scene
+        ]
+        [
+          "/GUIs/GenericComparisonUI.gui"
+          :scene
+        ]
+        [
+          "/Scripts/Loader.script"
+          :code
+        ]
+        [
+          "/Scripts/GenericGame.gui_script"
+          :code
+        ]
+        [
+          "/Scripts/Weight Game/WeightGameGUI.gui_script"
+          :code
+        ]
+        [
+          "/Scripts/GenericSpawner.script"
+          :code
         ]
       ]
     ]
     :recent-files [
-      [
-        "/builtins/input/all.input_binding"
-        :cljfx-form-view
-      ]
-      [
-        "/Scripts/DragSpawningScript.script"
-        :code
-      ]
-      [
-        "/input/game.input_binding"
-        :cljfx-form-view
-      ]
       [
         "/Scripts/cursor.script"
         :code
@@ -113,10 +93,6 @@
         :scene
       ]
       [
-        "/Test Objects/Loader.go"
-        :scene
-      ]
-      [
         "/GUIs/Weight Game_copy.gui"
         :scene
       ]
@@ -129,28 +105,8 @@
         :code
       ]
       [
-        "/Test Collections/GameSelect.collection"
-        :scene
-      ]
-      [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
-        "/Scripts/Weight Game/WeightGameGUI.gui_script"
-        :code
-      ]
-      [
         "/Scripts/Height Game/HeightGameGUI.gui_script"
         :code
-      ]
-      [
-        "/Test Collections/Loader.collection"
-        :scene
-      ]
-      [
-        "/GUIs/Weight Game.gui"
-        :scene
       ]
       [
         "/Scripts/Height Game/HeightGameSpriteSpawner.script"
@@ -161,15 +117,15 @@
         :code
       ]
       [
-        "/GUIs/Height Game.gui"
+        "/Test Collections/GameSelect.collection"
         :scene
       ]
       [
-        "/Scripts/Loader.script"
-        :code
+        "/game.project"
+        :cljfx-form-view
       ]
       [
-        "/Test Collections/GenericComparison.collection"
+        "/GUIs/Height Game.gui"
         :scene
       ]
       [
@@ -177,8 +133,44 @@
         :scene
       ]
       [
+        "/GUIs/Weight Game.gui"
+        :scene
+      ]
+      [
+        "/Test Collections/Loader.collection"
+        :scene
+      ]
+      [
+        "/Test Objects/Loader.go"
+        :scene
+      ]
+      [
+        "/Scripts/Weight Game/WeightGameGUI.gui_script"
+        :code
+      ]
+      [
+        "/Scripts/GenericGame.gui_script"
+        :code
+      ]
+      [
         "/Test Objects/ComparisonGame.go"
         :scene
+      ]
+      [
+        "/GUIs/GenericComparisonUI.gui"
+        :scene
+      ]
+      [
+        "/Scripts/GenericSpawner.script"
+        :code
+      ]
+      [
+        "/Test Collections/GenericComparison.collection"
+        :scene
+      ]
+      [
+        "/Scripts/Loader.script"
+        :code
       ]
     ]
   }

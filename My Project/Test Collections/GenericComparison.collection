@@ -1,2 +1,6 @@
 name: "GenericComparison"
+instances {
+  id: "ComparisonGame"
+  prototype: "/Test Objects/ComparisonGame.go"
+}
 scale_along_z: 0

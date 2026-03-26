@@ -1,0 +1,269 @@
+fonts {
+  name: "PokemonBodyBold"
+  font: "/Fonts/PokemonBodyBold.font"
+}
+fonts {
+  name: "PokemonBody"
+  font: "/Fonts/PokemonBody.font"
+}
+fonts {
+  name: "PokemonBodyExtrabold"
+  font: "/Fonts/PokemonBodyExtrabold.font"
+}
+fonts {
+  name: "PokemonBodyExtralight"
+  font: "/Fonts/PokemonBodyExtralight.font"
+}
+fonts {
+  name: "PokemonBodyHeavy"
+  font: "/Fonts/PokemonBodyHeavy.font"
+}
+fonts {
+  name: "PokemonBodyLight"
+  font: "/Fonts/PokemonBodyLight.font"
+}
+fonts {
+  name: "PokemonBodyMedium"
+  font: "/Fonts/PokemonBodyMedium.font"
+}
+fonts {
+  name: "PokemonBodySemiBold"
+  font: "/Fonts/PokemonBodySemiBold.font"
+}
+fonts {
+  name: "PokemonHeaders"
+  font: "/Fonts/PokemonHeaders.font"
+}
+nodes {
+  position {
+    x: 100.0
+    y: 580.0
+  }
+  size {
+    x: 100.0
+    y: 50.0
+  }
+  type: TYPE_BOX
+  id: "Return"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 820.0
+    y: 150.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "pokemon2"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 140.0
+    y: 50.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "PokemonBodyHeavy"
+  id: "Pokemon1Value"
+  inherit_alpha: true
+  visible: false
+}
+nodes {
+  position {
+    x: 850.0
+    y: 580.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Highscore: "
+  font: "PokemonBodyHeavy"
+  id: "HighScore"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 480.0
+    y: 350.0
+  }
+  size {
+    x: 400.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "tryAgain"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 820.0
+    y: 50.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "PokemonBodyHeavy"
+  id: "Pokemon2Value"
+  inherit_alpha: true
+  visible: false
+}
+nodes {
+  position {
+    x: 100.0
+    y: 580.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Back"
+  font: "PokemonBodyHeavy"
+  id: "ReturnText"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 820.0
+    y: 150.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pokemon2\n"
+  ""
+  font: "PokemonBodyHeavy"
+  id: "pokemon2Name"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 480.0
+    y: 350.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Try Again?"
+  font: "PokemonBodyHeavy"
+  id: "tryAgainText"
+  inherit_alpha: true
+  visible: false
+}
+nodes {
+  position {
+    x: 480.0
+    y: 150.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Game Text\n"
+  ""
+  font: "PokemonBodyHeavy"
+  id: "GameText"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 480.0
+    y: 540.0
+  }
+  scale {
+    x: 2.0
+    y: 2.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Score: 0\n"
+  ""
+  font: "PokemonBodyHeavy"
+  id: "score"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 140.0
+    y: 150.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "pokemon1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 140.0
+    y: 150.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "Pokemon1\n"
+  ""
+  font: "PokemonBodyHeavy"
+  id: "pokemon1Name"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
