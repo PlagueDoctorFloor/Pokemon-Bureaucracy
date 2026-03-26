@@ -18,14 +18,6 @@
           :scene
         ]
         [
-          "/Scripts/GameSelect.gui_script"
-          :code
-        ]
-        [
-          "/Scripts/Title Screen.script"
-          :code
-        ]
-        [
           "/Scripts/Loader.script"
           :code
         ]
@@ -41,33 +33,25 @@
           "/GUIs/Weight Game.gui"
           :scene
         ]
+        [
+          "/Scripts/Weight Game/WeightGameSpriteSpawner.script"
+          :code
+        ]
+        [
+          "/Test Collections/GenericComparison.collection"
+          :scene
+        ]
+        [
+          "/Test Objects/ComparisonGame.go"
+          :scene
+        ]
+        [
+          "/Test Objects/HeightGame.go"
+          :scene
+        ]
       ]
     ]
     :recent-files [
-      [
-        "/Test Collections/JSONTest.collection"
-        :scene
-      ]
-      [
-        "/Test Collections/Title.collection"
-        :scene
-      ]
-      [
-        "/Test Collections/DraggingTest.collection"
-        :scene
-      ]
-      [
-        "/Scripts/Data Tracker.script"
-        :code
-      ]
-      [
-        "/Scripts/JSONTesting.script"
-        :code
-      ]
-      [
-        "/Scripts/replace_mouse_cursor.script"
-        :code
-      ]
       [
         "/builtins/input/all.input_binding"
         :cljfx-form-view
@@ -129,35 +113,35 @@
         :scene
       ]
       [
-        "/game.project"
-        :cljfx-form-view
-      ]
-      [
-        "/Test Collections/GameSelect.collection"
+        "/Test Objects/Loader.go"
         :scene
       ]
       [
-        "/Scripts/Height Game/HeightGameGUI.gui_script"
-        :code
+        "/GUIs/Weight Game_copy.gui"
+        :scene
       ]
       [
         "/Scripts/GameSelect.gui_script"
         :code
       ]
       [
-        "/Scripts/Weight Game/WeightGameGUI.gui_script"
-        :code
-      ]
-      [
-        "/Test Objects/Loader.go"
-        :scene
-      ]
-      [
         "/Scripts/Title Screen.script"
         :code
       ]
       [
-        "/Scripts/Loader.script"
+        "/Test Collections/GameSelect.collection"
+        :scene
+      ]
+      [
+        "/game.project"
+        :cljfx-form-view
+      ]
+      [
+        "/Scripts/Weight Game/WeightGameGUI.gui_script"
+        :code
+      ]
+      [
+        "/Scripts/Height Game/HeightGameGUI.gui_script"
         :code
       ]
       [
@@ -169,7 +153,31 @@
         :scene
       ]
       [
-        "/GUIs/Weight Game_copy.gui"
+        "/Scripts/Height Game/HeightGameSpriteSpawner.script"
+        :code
+      ]
+      [
+        "/Scripts/Weight Game/WeightGameSpriteSpawner.script"
+        :code
+      ]
+      [
+        "/GUIs/Height Game.gui"
+        :scene
+      ]
+      [
+        "/Scripts/Loader.script"
+        :code
+      ]
+      [
+        "/Test Collections/GenericComparison.collection"
+        :scene
+      ]
+      [
+        "/Test Objects/HeightGame.go"
+        :scene
+      ]
+      [
+        "/Test Objects/ComparisonGame.go"
         :scene
       ]
     ]
